@@ -67,25 +67,6 @@ ActiveRecord::Schema.define(version: 20151014203957) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "productions", force: :cascade do |t|
-    t.string   "numero"
-    t.integer  "datasheet_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "productions", ["datasheet_id"], name: "index_productions_on_datasheet_id"
-
-  create_table "segundas", force: :cascade do |t|
-    t.string   "pais"
-    t.string   "ciudad"
-    t.integer  "joda_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "segundas", ["joda_id"], name: "index_segundas_on_joda_id"
-
   create_table "supplies", force: :cascade do |t|
     t.string   "nombre"
     t.string   "medida"
@@ -93,15 +74,6 @@ ActiveRecord::Schema.define(version: 20151014203957) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "teoricos", force: :cascade do |t|
-    t.string   "nombre"
-    t.integer  "production_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "teoricos", ["production_id"], name: "index_teoricos_on_production_id"
 
   create_table "variables", force: :cascade do |t|
     t.integer  "numero"
