@@ -1,0 +1,31 @@
+<%= form_for(@datasheet) do |f| %>
+  <% if @datasheet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@datasheet.errors.count, "error") %> prohibited this datasheet from being saved:</h2>
+
+      <ul>
+      <% @datasheet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :referencia %><br>
+    <%= f.text_field :referencia %>
+  </div>
+  <div class="field">
+    <%= f.label :supply_id %><br>
+    <%= f.collection_select :supply_id, Supply.all, :id, :nombre, {prompt: 'Seleccione insumo o Material'}, {class: 'form-control'} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+

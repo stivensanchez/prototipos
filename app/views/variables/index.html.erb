@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>Costos Variables</h1></center>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th>Ficha Tecnica</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @variables.each do |variable| %>
+      <tr>
+        <td><%= variable.numero %></td>
+        <td><%= variable.datasheet.nombre rescue nil %></td>
+        <td><%= link_to 'Detalle', variable %></td>
+        <td><%= link_to 'Edit', edit_variable_path(variable) %></td>
+        <td><%= link_to 'Destroy', variable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar Costo Variables', new_variable_path, class: 'btn btn-default' %>
+

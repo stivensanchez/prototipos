@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cantidad: 1.5
+  valor_unitario: 1.5
+  valor_total: 1.5
+  total: 1.5
+  variable_id: 
+
+two:
+  cantidad: 1.5
+  valor_unitario: 1.5
+  valor_total: 1.5
+  total: 1.5
+  variable_id: 

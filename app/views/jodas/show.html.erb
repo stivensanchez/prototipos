@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @joda.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @joda.apellido %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @joda.telefono %>
+</p>
+
+<div class="links">
+  <%= link_to 'Edit', edit_joda_path(@joda) %> |
+  <%= link_to 'Back', jodas_path %>
+</div>

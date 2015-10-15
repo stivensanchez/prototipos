@@ -1,0 +1,96 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="well">
+    <center><h4>EJECUCIÓN DE COSTOS DE PRODUCCIÓN POR MODULO </h4></center>
+  </div>
+
+  
+  <div class="jumbotron">
+    
+    <div class="row">
+      <div class="col-md-5">
+        <h5><b>MINUTOS REALES EN PLANTA :</b></h5>
+      </div>
+      <div class="col-md-5">
+        <%= @module_work.minutos_reales %>
+      </div>
+    </div>
+ 
+    <div class="row">
+      <div class="col-md-5">
+        <h5><b>COSTOS MINUTO:</b></h5>
+      </div>
+      <div class="col-md-5">
+        <%= @module_work.costo_minuto %>
+      </div>
+    </div>
+
+    <div class="row">
+       <div class="col-md-5">
+         <h5><b>OTROS COSTOS  MANO DE OBRA :</b></h5>
+       </div>
+       <div class="col-md-5">
+         <%= @module_work.otros_costos %>
+       </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">
+        <h4><b><i>COSTOS MANO DE OBRA PRODUCCIÓN :</i></b></h4>
+      </div>
+      <div class="col-md-5">
+        <b><%= @module_work.costo_mano_obra %></b>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-5">
+        <h4><b><i>MANO DE OBRA PLANEADA: </i></b></h4>
+      </div>
+      <div class="col-md-5">
+        <b><%= @module_work.manoObraPlaneada %></b>
+      </div>
+    </div>
+ 
+    <br><br>
+  
+    <div class="links">
+      <%= link_to 'Editar', edit_module_work_path(@module_work) %> |
+      <%= link_to 'Atras', module_works_path %>
+    </div>
+  
+   <!-- 
+    <div class="links">
+      <div class="linkex">
+        <strong class="txt-success"><a><!%= link_to "Descargar tabla en ", module_work_path(@module_work, format: "xls" ) %></a></strong>
+        <!%= link_to image_tag("excel.png", :size => "30x30"), module_work_path(@module_work, format: "xls"), class: 'btn btn-default' %>
+      </div>
+    </div>
+   --> 
+    <div class="links">
+        <div class="linkex">
+          <strong class="txt-success"><a href=javascript:window.print();>Imprimir Tabla</a></strong>
+          <%= link_to image_tag("impresora.png", :size => "30x30"), class: 'btn btn-default' %>
+        </div>
+    </div> 
+  </div> 
+
+
+   
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

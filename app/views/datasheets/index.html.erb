@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>Fichas Tecnicas</h1></center>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Referencia</th>
+      <th>Supply</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datasheets.each do |datasheet| %>
+      <tr>
+        <td><%= datasheet.nombre %></td>
+        <td><%= datasheet.referencia %></td>
+        <td><%= datasheet.supply.nombre rescue nil %></td>
+        <td><%= link_to 'Show', datasheet %></td>
+        <td><%= link_to 'Edit', edit_datasheet_path(datasheet) %></td>
+        <td><%= link_to 'Destroy', datasheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar Ficha Tecnica', new_datasheet_path, class: 'btn btn-default' %>
+
+<!--
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!% Modulo.all.each do |modulo| %>
+          <tr>
+            <td><!%= modulo.nombre %></td>
+          </tr>
+      <!% end %>   
+    </tbody>
+  </table>
+-->  
+

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  minutos_reales: 1.5
+  costo_minuto: 1.5
+  otros_costos: 1.5
+  costo_mano_obra: 1.5
+
+two:
+  minutos_reales: 1.5
+  costo_minuto: 1.5
+  otros_costos: 1.5
+  costo_mano_obra: 1.5

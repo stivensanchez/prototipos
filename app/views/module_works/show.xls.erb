@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Styles>
+   <Style ss:ID="head">
+      
+      <Font ss:FontName="Calibri" ss:Size="13" ss:Bold="1" ss:Border="1"/>
+      <Borders>
+	    	<Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="Black" />
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="Black" />
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="Black" />
+				<Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="Black" />
+	 		</Borders>
+    </Style>
+    <Style ss:ID="body">
+      <Borders>
+	    	<Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="Black" />
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="Black" />
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="Black" />
+				<Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="Black" />
+	 		</Borders>
+    </Style>
+  </Styles>
+  <Worksheet ss:Name="MANO DE OBRA MODULO">
+    <Table>
+      
+      <Row>
+        <Cell ss:StyleID="head"><Data ss:Type="String"></Data></Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="head"><Data ss:Type="String">EJECUCIÓN DE COSTOS DE PRODUCCIÓN POR MODULO</Data></Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="head"><Data ss:Type="String"></Data></Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="head"><Data ss:Type="String">MODULO:</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String"><%= @module_work.modulo.nombre %></Data></Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="head"><Data ss:Type="String">MINUTOS REALES EN PLANTA:</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String"><%= @module_work.minutos_reales %></Data></Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="head"><Data ss:Type="String">COSTOS MINUTO:</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String"><%= @module_work.costo_minuto %></Data></Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="head"><Data ss:Type="String">OTROS COSTOS  MANO DE OBRA :</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String"><%= @module_work.otros_costos %></Data></Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="head"><Data ss:Type="String">COSTOS MANO DE OBRA PRODUCCIÓN:</Data></Cell>
+        <Cell ss:StyleID="head"><Data ss:Type="String"><%= @module_work.costo_mano_obra %></Data></Cell>
+      </Row>
+      
+    </Table>
+  </Worksheet>
+</Workbook>

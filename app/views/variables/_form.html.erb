@@ -1,0 +1,70 @@
+<%= form_for(@variable) do |f| %>
+  <% if @variable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@variable.errors.count, "error") %> prohibited this variable from being saved:</h2>
+
+      <ul>
+      <% @variable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="row">
+ <div class="col-md-4">
+  <div class="field">
+    <%= f.label :numero %><br>
+    <%= f.number_field :numero, class: 'form-control' %>
+  </div>
+ </div>
+ <div class="col-md-4">
+   <div class="field">
+    <%= f.label :ficha %><br>
+    <%= f.collection_select :datasheet_id, Datasheet.all, :id, :nombre, {prompt: 'Seleccione Ficha Tecnica'}, {class: 'form-control'} %>
+  </div>
+ </div>
+ <div class="col-md-4">
+   <div class="field">
+     <%= f.label :Cantidad_Lote%><br>
+     <%= f.text_field :cantidadLote, class: 'form-control'%>
+   </div>
+ </div>
+</div>
+<br>
+<div class="jumbotron">
+    <legend>Producto</legend>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="field">
+          <%= f.label :cantidad %><br>
+          <%= f.text_field :cantidad, class: 'form-control' %>
+        </div>
+      </div>
+<!-- Client.find_by first_name: 'Lifo' -->  
+      <div class="col-md-6">
+        <div class="field">
+          <%= f.label :nombre %><br>
+          <%= f.collection_select :datasheet_id, Datasheet.all, :id, :nombre, {prompt: 'Seleccione'}, {class: 'form-control'}  %>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="field">
+          <%= f.label :medida %><br>
+          <%= f.text_field :medida, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="field">
+          <%= f.label :valor_unidad %><br>
+          <%= f.text_field :valor_unidad, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+</div>
+  <br>
+  <div class="actions">
+    <%= f.submit 'Guardar', class: 'btn btn-default' %>
+  </div>
+<% end %>

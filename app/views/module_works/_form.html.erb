@@ -1,0 +1,22 @@
+<%= form_for(@module_work) do |f| %>
+  <% if @module_work.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@module_work.errors.count, "error") %> prohibited this module_work from being saved:</h2>
+
+      <ul>
+      <% @module_work.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :modulos %><br>
+    <%= f.collection_select :modulo_id, Modulo.all, :id, :nombre, {prompt: 'Seleccione modulo'},{class: 'form-control'}%>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit 'Gardar', class: 'btn btn-dafault' %>
+  </div>
+<% end %>

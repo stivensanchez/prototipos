@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @datasheet.nombre %>
+</p>
+
+<p>
+  <strong>Referencia:</strong>
+  <%= @datasheet.referencia %>
+</p>
+
+<p>
+  <strong>Supply:</strong>
+  <%= @datasheet.supply %>
+</p>
+
+<%= link_to 'Edit', edit_datasheet_path(@datasheet) %> |
+<%= link_to 'Back', datasheets_path %>

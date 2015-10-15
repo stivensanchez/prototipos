@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @supply.nombre %>
+</p>
+
+<p>
+  <strong>Medida:</strong>
+  <%= @supply.medida %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @supply.cantidad %>
+</p>
+
+<%= link_to 'Edit', edit_supply_path(@supply) %> |
+<%= link_to 'Back', supplies_path %>

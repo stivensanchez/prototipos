@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>Insumos</h1></center>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Medida</th>
+      <th>Cantidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supplies.each do |supply| %>
+      <tr>
+        <td><%= supply.nombre %></td>
+        <td><%= supply.medida %></td>
+        <td><%= supply.cantidad %></td>
+        <td><%= link_to 'Editar', edit_supply_path(supply) %></td>
+        <td><%= link_to 'Eliminar', supply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Insumo', new_supply_path, class: 'btn btn-default' %>

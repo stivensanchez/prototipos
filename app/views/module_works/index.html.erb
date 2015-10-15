@@ -1,0 +1,64 @@
+<br><br>
+<div class="row">
+  <div class="col-md-5">
+    <div class="well">
+        <!-- Inicia el formulario -->
+        <%= form_for(@module_work) do |f| %>
+        <% if @module_work.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@module_work.errors.count, "error") %> prohibited this module_work from being saved:</h2>
+      
+            <ul>
+            <% @module_work.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      
+        <div class="field">
+          <%= f.label :modulos %><br>
+          <%= f.collection_select :modulo_id, Modulo.all, :id, :nombre, {prompt: 'Seleccione modulo'},{class: 'form-control'}%>
+        </div>
+        
+        <br>
+        <div class="actions">
+          <%= f.submit 'Gardar', class: 'btn btn-dafault' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <!-- Inicia el Index -->
+  
+    <div class="col-md-7">
+      <p id="notice"><%= notice %></p>
+  
+        <center><h1>Mano de Obra Modulos</h1></center>
+        
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Modulo</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <% @module_works.each do |module_work| %>
+              <tr>
+                <td><%= module_work.modulo.nombre rescue nil %></td>
+                <td><%= link_to 'Detalle', module_work %></td>
+                <td><%= link_to 'Editar', edit_module_work_path(module_work) %></td>
+                <td><%= link_to 'Eliminar', module_work, method: :delete, data: { confirm: 'Esta Seguro?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        
+        <br>
+        
+        <%# link_to 'Agregar Mano de Obra', new_module_work_path, class: 'btn btn-default' %>
+    </div>
+</div>
