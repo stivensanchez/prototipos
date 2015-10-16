@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :modulos %><br>
-    <%= f.collection_select :modulo_id, Modulo.all, :id, :nombre, {prompt: 'Seleccione modulo'},{class: 'form-control'}%>
+    <%= f.collection_select :modulo_id, Modulo.all, :id, :nombre, {prompt: 'Seleccione modulo'},{class: 'form-control'} %>
   </div>
   
   <div class="actions">

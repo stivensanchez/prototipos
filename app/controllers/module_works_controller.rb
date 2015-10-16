@@ -76,6 +76,6 @@ class ModuleWorksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def module_work_params
-      params.require(:module_work).permit(:minutos_reales, :costo_minuto, :otros_costos, :costo_mano_obra, :manoObraPlaneada, :modulo_id)
+      params.require(:module_work).permit(:minutos_reales, :costo_minuto, :otros_costos, :costo_mano_obra, :manoObraPlaneada, :modulo_id, :moduloCreate)
     end
 end

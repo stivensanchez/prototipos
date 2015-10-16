@@ -25,7 +25,7 @@ class VariablesController < ApplicationController
   # POST /variables.json
   def create
     @variable = Variable.new(variable_params)
-
+    
     respond_to do |format|
       if @variable.save
         format.html { redirect_to @variable, notice: 'Variable was successfully created.' }

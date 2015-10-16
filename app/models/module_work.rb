@@ -1,7 +1,9 @@
 class ModuleWork < ActiveRecord::Base
     belongs_to :modulo
     before_validation :calculo
+    after_create :prueba
     
+    #Calculo de los costos
     def calculo 
         self.minutos_reales = 5 * 480 #cantidad de OPERARIOS * Jornada de Trabajo(Turnos)
         self.costo_minuto = 89 #Costo Real por minuto
@@ -9,6 +11,13 @@ class ModuleWork < ActiveRecord::Base
         self.costo_mano_obra = 420 * 5 * 89 # Jornada Minutos * Cantidad Operarios * Costo Real por minutos 
         self.manoObraPlaneada = 650.000 * 5 # Salario Total *  Cantidad de operarios 
     end 
+    
+    #Metodo para crear Un Modulo Nuevo
+    def prueba
+        if self.moduloCreate.nil? == false
+            Modulo.create(nombre: self.moduloCreate)
+        end
+    end
     
     #Descargar en Excel
     def self.to_csv(options = {})

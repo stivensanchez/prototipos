@@ -20,8 +20,22 @@
           <%= f.label :modulos %><br>
           <%= f.collection_select :modulo_id, Modulo.all, :id, :nombre, {prompt: 'Seleccione modulo'},{class: 'form-control'}%>
         </div>
-        
         <br>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <center>Crear Modulo</center>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+              <%= f.label :Nombre %><br>
+              <%= f.text_field :moduloCreate, class: 'form-control'%>
+            </div>
+          </div>
+        </div>
         <div class="actions">
           <%= f.submit 'Gardar', class: 'btn btn-dafault' %>
         </div>
@@ -48,7 +62,11 @@
           <tbody>
             <% @module_works.each do |module_work| %>
               <tr>
-                <td><%= module_work.modulo.nombre rescue nil %></td>
+                <% if module_work.modulo_id == nil %>
+                  <td><%= module_work.moduloCreate %></td>
+                <% else %>
+                  <td><%= module_work.modulo.nombre rescue nil %></td>
+                <% end %>    
                 <td><%= link_to 'Detalle', module_work %></td>
                 <td><%= link_to 'Editar', edit_module_work_path(module_work) %></td>
                 <td><%= link_to 'Eliminar', module_work, method: :delete, data: { confirm: 'Esta Seguro?' } %></td>

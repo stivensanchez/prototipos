@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014203957) do
+ActiveRecord::Schema.define(version: 20151016004851) do
 
   create_table "datasheets", force: :cascade do |t|
     t.string   "nombre"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20151014203957) do
     t.datetime "updated_at",       null: false
     t.integer  "modulo_id"
     t.float    "manoObraPlaneada"
+    t.string   "modulo"
+    t.string   "moduloCreate"
   end
 
   add_index "module_works", ["modulo_id"], name: "index_module_works_on_modulo_id"
