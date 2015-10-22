@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  totalPlaneada: 1.5
+  operarios: 1
+  modulo_id: 
+
+two:
+  totalPlaneada: 1.5
+  operarios: 1
+  modulo_id: 

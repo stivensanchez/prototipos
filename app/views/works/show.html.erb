@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Totalplaneada:</strong>
+  <%= number_to_currency(@work.totalPlaneada, :unit => '$', precision: 3)%>
+</p>
+
+<p>
+  <strong>Operarios:</strong>
+  <%= @work.operarios %>
+</p>
+
+<p>
+  <strong>Modulo:</strong>
+  <%= @work.modulo.nombre rescue nil %>
+</p>
+
+<%= link_to 'Edit', edit_work_path(@work) %> |
+<%= link_to 'Back', works_path %>

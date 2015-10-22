@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>Mano Obra Planeadas</h1></center>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Modulo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @works.each do |work| %>
+      <tr>
+        <td><%= work.modulo.nombre rescue nil %></td>
+        <td><%= link_to 'Detalle', work %></td>
+        <td><%= link_to 'Editar', edit_work_path(work) %></td>
+        <td><%= link_to 'Eliminar', work, method: :delete, data: { confirm: 'Esta seguro' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar Nuevo', new_work_path, class: 'btn btn-default' %>

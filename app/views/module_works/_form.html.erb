@@ -15,6 +15,11 @@
     <%= f.label :modulos %><br>
     <%= f.collection_select :modulo_id, Modulo.all, :id, :nombre, {prompt: 'Seleccione modulo'},{class: 'form-control'} %>
   </div>
+
+  <div class="form-group">
+    <label>Maquina</label>
+    <%= f.grouped_collection_select :machine_id, Modulo.all, :machines, :nombre, :id, :nombre, { :include_blank => true }, { class:"form-control" } %>
+  </div>
   
   <div class="actions">
     <%= f.submit 'Gardar', class: 'btn btn-dafault' %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :works
+  resources :machines
   get 'prueba/index'
 
   resources :datasheets

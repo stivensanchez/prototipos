@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016004851) do
+ActiveRecord::Schema.define(version: 20151022021028) do
 
   create_table "datasheets", force: :cascade do |t|
     t.string   "nombre"
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 20151016004851) do
 
   add_index "lotes", ["variable_id"], name: "index_lotes_on_variable_id"
 
+  create_table "machines", force: :cascade do |t|
+    t.string   "nombre"
+    t.integer  "modulo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "machines", ["modulo_id"], name: "index_machines_on_modulo_id"
+
   create_table "module_works", force: :cascade do |t|
     t.float    "minutos_reales"
     t.float    "costo_minuto"
@@ -57,10 +66,11 @@ ActiveRecord::Schema.define(version: 20151016004851) do
     t.datetime "updated_at",       null: false
     t.integer  "modulo_id"
     t.float    "manoObraPlaneada"
-    t.string   "modulo"
     t.string   "moduloCreate"
+    t.integer  "machine_id"
   end
 
+  add_index "module_works", ["machine_id"], name: "index_module_works_on_machine_id"
   add_index "module_works", ["modulo_id"], name: "index_module_works_on_modulo_id"
 
   create_table "modulos", force: :cascade do |t|
@@ -93,5 +103,16 @@ ActiveRecord::Schema.define(version: 20151016004851) do
   end
 
   add_index "variables", ["datasheet_id"], name: "index_variables_on_datasheet_id"
+
+  create_table "works", force: :cascade do |t|
+    t.float    "totalPlaneada"
+    t.integer  "operarios"
+    t.integer  "modulo_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.float    "sueldoTotal"
+  end
+
+  add_index "works", ["modulo_id"], name: "index_works_on_modulo_id"
 
 end

@@ -1,5 +1,6 @@
 class ModuleWork < ActiveRecord::Base
     belongs_to :modulo
+    belongs_to :machine
     before_validation :calculo
     after_create :prueba
     
