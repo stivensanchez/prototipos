@@ -1,0 +1,33 @@
+<%= form_for(@oper) do |f| %>
+  <% if @oper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@oper.errors.count, "error") %> prohibited this oper from being saved:</h2>
+
+      <ul>
+      <% @oper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido %><br>
+    <%= f.text_field :apellido %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono %><br>
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :group_id %><br>
+    <%= f.collection_select :group_id, Group.all, :id, :nombre, {prompt: 'Seleccione Grupo'}, {class: 'form-control'} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

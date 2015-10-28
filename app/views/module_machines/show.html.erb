@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<!--
+<p>
+  <strong>Modulo:</strong>
+  <%# @module_machine.modulo %>
+</p>
+
+<p>
+  <strong>Machine:</strong>
+  <%# @module_machine.machine %>
+</p>
+-->
+<center><h1>Costos de Maquinaria </h1></center>
+<br><br>
+<div class="well">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Maquina</th>
+				<th>Cantidad</th>
+				<th>Fecha Compra</th>
+				<th>Precio</th>
+				<th>Valor</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @module_machine.machine_modules.each do |machine_module| %>
+			<tr>
+				<td><%= machine_module.machine.nombre %></td>
+				<td><%= machine_module.cantidad %></td>
+				<td><%= machine_module.fecha_compra %></td>
+				<td><%= machine_module.precio %></td>
+				<td><%= machine_module.total_maquina %></td>
+			</tr>	
+			<% end %>
+		</tbody>
+	</table>
+	<div class="row">
+		<div class="col-md-4">
+			<h4><b><i>Valor Total Maquinas:</i></b></h4>
+		</div>
+		<div class="col-md-4">
+			<h4><b><i><%# @machine_modules.valor_total_maquina %></i></b></h4>
+		</div>
+	</div>
+</div>
+
+
+
+<%= link_to 'Editar', edit_module_machine_path(@module_machine) %> |
+<%= link_to 'Regresar', module_machines_path %>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :machine_modules
+  resources :opers
+  resources :groups
+  resources :module_machines
   resources :works
   resources :machines
   get 'prueba/index'

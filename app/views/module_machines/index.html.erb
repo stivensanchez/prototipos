@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>Costo Maquinaria</h1></center>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Modulo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @module_machines.each do |module_machine| %>
+      <tr>
+        <td><%= module_machine.modulo.nombre rescue nil %></td>
+        <td><%= link_to 'Detalle', module_machine %></td>
+        <td><%= link_to 'Editar', edit_module_machine_path(module_machine) %></td>
+        <td><%= link_to 'Eliminar', module_machine, method: :delete, data: { confirm: 'Esta Seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agragar Nuevo Costo', new_module_machine_path, class: 'btn btn-default' %>

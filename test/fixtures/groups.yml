@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ficha: MyString
+  nombre: MyString
+  modulo_id: 
+
+two:
+  ficha: MyString
+  nombre: MyString
+  modulo_id: 

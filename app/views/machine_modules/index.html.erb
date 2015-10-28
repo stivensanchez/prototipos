@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Machine Modules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Machine</th>
+      <th>Cantidad</th>
+      <th>Fecha compra</th>
+      <th>Precio</th>
+      <th>Total maquina</th>
+      <th>Valor total maquina</th>
+      <th>Valor depreciacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @machine_modules.each do |machine_module| %>
+      <tr>
+        <td><%= machine_module.machine %></td>
+        <td><%= machine_module.cantidad %></td>
+        <td><%= machine_module.fecha_compra %></td>
+        <td><%= machine_module.precio %></td>
+        <td><%= machine_module.total_maquina %></td>
+        <td><%= machine_module.valor_total_maquina %></td>
+        <td><%= machine_module.valor_depreciacion %></td>
+        <td><%= link_to 'Show', machine_module %></td>
+        <td><%= link_to 'Edit', edit_machine_module_path(machine_module) %></td>
+        <td><%= link_to 'Destroy', machine_module, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Machine module', new_machine_module_path %>

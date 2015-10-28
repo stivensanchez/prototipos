@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @oper.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @oper.apellido %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @oper.telefono %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @oper.group %>
+</p>
+
+<%= link_to 'Edit', edit_oper_path(@oper) %> |
+<%= link_to 'Back', opers_path %>

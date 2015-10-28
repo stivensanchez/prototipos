@@ -15,6 +15,7 @@
     <%= f.label :modulo_id %><br>
     <%= f.collection_select :modulo_id, Modulo.all, :id, :nombre, {prompt: 'Seleccione Modulo'}, {class: 'form-control'} %>
   </div>
+  <%# f.select(:modulo_id, Modulo.all.collect {|u| [u.nombre, u.id]}, :prompt => 'Select') %>
   <div class="actions">
     <%= f.submit %>
   </div>

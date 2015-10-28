@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Opers</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Telefono</th>
+      <th>Group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opers.each do |oper| %>
+      <tr>
+        <td><%= oper.nombre %></td>
+        <td><%= oper.apellido %></td>
+        <td><%= oper.telefono %></td>
+        <td><%= oper.group.nombre rescue nil %></td>
+        <td><%= link_to 'Show', oper %></td>
+        <td><%= link_to 'Edit', edit_oper_path(oper) %></td>
+        <td><%= link_to 'Destroy', oper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Oper', new_oper_path %>

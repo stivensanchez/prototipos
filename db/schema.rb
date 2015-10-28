@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022021028) do
+ActiveRecord::Schema.define(version: 20151027202920) do
 
   create_table "datasheets", force: :cascade do |t|
     t.string   "nombre"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20151022021028) do
   end
 
   add_index "datasheets", ["supply_id"], name: "index_datasheets_on_supply_id"
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "ficha"
+    t.string   "nombre"
+    t.integer  "modulo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "groups", ["modulo_id"], name: "index_groups_on_modulo_id"
 
   create_table "jodas", force: :cascade do |t|
     t.string   "nombre"
@@ -48,6 +58,22 @@ ActiveRecord::Schema.define(version: 20151022021028) do
 
   add_index "lotes", ["variable_id"], name: "index_lotes_on_variable_id"
 
+  create_table "machine_modules", force: :cascade do |t|
+    t.integer  "machine_id"
+    t.integer  "cantidad"
+    t.date     "fecha_compra"
+    t.float    "precio"
+    t.float    "total_maquina"
+    t.float    "valor_total_maquina"
+    t.float    "valor_depreciacion"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "module_machine_id"
+  end
+
+  add_index "machine_modules", ["machine_id"], name: "index_machine_modules_on_machine_id"
+  add_index "machine_modules", ["module_machine_id"], name: "index_machine_modules_on_module_machine_id"
+
   create_table "machines", force: :cascade do |t|
     t.string   "nombre"
     t.integer  "modulo_id"
@@ -56,6 +82,16 @@ ActiveRecord::Schema.define(version: 20151022021028) do
   end
 
   add_index "machines", ["modulo_id"], name: "index_machines_on_modulo_id"
+
+  create_table "module_machines", force: :cascade do |t|
+    t.integer  "modulo_id"
+    t.integer  "machine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "module_machines", ["machine_id"], name: "index_module_machines_on_machine_id"
+  add_index "module_machines", ["modulo_id"], name: "index_module_machines_on_modulo_id"
 
   create_table "module_works", force: :cascade do |t|
     t.float    "minutos_reales"
@@ -78,6 +114,17 @@ ActiveRecord::Schema.define(version: 20151022021028) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "opers", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "telefono"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "opers", ["group_id"], name: "index_opers_on_group_id"
 
   create_table "supplies", force: :cascade do |t|
     t.string   "nombre"

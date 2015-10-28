@@ -1,0 +1,37 @@
+<%= form_for(@module_machine) do |f| %>
+  <% if @module_machine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@module_machine.errors.count, "error") %> prohibited this module_machine from being saved:</h2>
+
+      <ul>
+      <% @module_machine.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="field">
+    <%= f.label :modulo_id %><br>
+    <%= f.collection_select :modulo_id, Modulo.all, :id, :nombre, {prompt: 'Seleccione un modulo'}, {class: 'form-control'} %>
+  </div>
+  <br>
+  <!--
+  <div class="field">
+    <%# f.label :machine_id %><br>
+    <%# f.grouped_collection_select :machine_id, Modulo.all, :machines, :nombre, :id, :nombre, {include_blank: 'Seleccione Maquina'}, {class: 'form-control'} %>
+  </div><br>
+  -->
+  <% if ModuleMachine.exists? ==  %>
+    <div class="fielset">
+      <%=  f.fields_for :machine_modules do |machine_module| %>
+        <%= render 'machine_module_fields', f: machine_module %>
+      <% end %>
+      <%= link_to_add_association 'Agregar Costo', f, :machine_modules %>
+    </div>  
+  <% end %>  
+  <div class="actions">
+    <%= f.submit 'Guardar', class: 'btn btn-default' %>
+    <%= link_to 'Regresar', module_machines_path, class: 'btn btn-default'%>
+  </div>
+<% end %>

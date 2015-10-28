@@ -1,0 +1,23 @@
+<div class="nested-fields well">
+   	<div class="field">
+    <div class="row">
+    	<div class="col-md-3">
+    		<%= f.label :machine_id %><br>
+            <%= f.grouped_collection_select :machine_id, Modulo.all, :machines, :nombre, :id, :nombre, {include_blank: 'Seleccione Maquina'}, {class: 'form-control'} %>
+    	</div>
+    	<div class="col-md-3">
+    		<%= f.label :Cantidad %><br>
+    		<%= f.text_field :cantidad, class: 'form-control' %>
+    	</div>
+    	<div class="col-md-3">
+    		<%= f.label :Fecha_Compra %><br>
+    		<%= f.text_field :fecha_compra, id:'datepicker', class:'form-control' %>
+    	</div>
+    	<div class="col-md-3">
+    		<%= f.label :Precio %><br>
+    		<%= f.text_field :precio, class: 'form-control' %>
+    	</div>
+    </div>
+  </div><br>
+    <%= link_to_remove_association 'Eliminar Costo', f %>
+</div>	

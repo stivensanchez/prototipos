@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  machine_id: 
+  cantidad: 1
+  fecha_compra: 2015-10-27
+  precio: 1.5
+  total_maquina: 1.5
+  valor_total_maquina: 1.5
+  valor_depreciacion: 1.5
+
+two:
+  machine_id: 
+  cantidad: 1
+  fecha_compra: 2015-10-27
+  precio: 1.5
+  total_maquina: 1.5
+  valor_total_maquina: 1.5
+  valor_depreciacion: 1.5

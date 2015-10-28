@@ -1,19 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Totalplaneada:</strong>
-  <%= number_to_currency(@work.totalPlaneada, :unit => '$', precision: 3)%>
-</p>
+<div class="well">
+	<center><h3>Mano de Obra Planeada</h3></center>
+</div>
 
-<p>
-  <strong>Operarios:</strong>
-  <%= @work.operarios %>
-</p>
-
-<p>
-  <strong>Modulo:</strong>
-  <%= @work.modulo.nombre rescue nil %>
-</p>
+<div class="row">
+	<h4>
+		<div class="col-md-6">
+			<strong>Modulo:</strong>
+			<%= @work.modulo.nombre rescue nil %>
+		</div>
+	</h4>
+	<h4>
+		<div class="col-md-6">
+			<strong>Operarios:</strong>
+			<%= @work.operarios %>
+		</div>
+	</h4>
+</div>
+<br>
+<div class="well">
+	<h4>
+		<div class="row">
+			<div class="col-md-6">
+				<b>Total Mano de Obra planeada:</b>
+			</div>
+			<div class="col-md-6">
+				<%= number_to_currency(@work.totalPlaneada, :unit => '$', precision: 3)%>
+			</div>
+		</div>
+	</h4>
+</div>
 
 <%= link_to 'Edit', edit_work_path(@work) %> |
 <%= link_to 'Back', works_path %>

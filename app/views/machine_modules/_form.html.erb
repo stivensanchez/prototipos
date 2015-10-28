@@ -1,0 +1,45 @@
+<%= form_for(@machine_module) do |f| %>
+  <% if @machine_module.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@machine_module.errors.count, "error") %> prohibited this machine_module from being saved:</h2>
+
+      <ul>
+      <% @machine_module.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :machine_id %><br>
+    <%= f.text_field :machine_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br>
+    <%= f.number_field :cantidad %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_compra %><br>
+    <%= f.date_select :fecha_compra %>
+  </div>
+  <div class="field">
+    <%= f.label :precio %><br>
+    <%= f.text_field :precio %>
+  </div>
+  <div class="field">
+    <%= f.label :total_maquina %><br>
+    <%= f.text_field :total_maquina %>
+  </div>
+  <div class="field">
+    <%= f.label :valor_total_maquina %><br>
+    <%= f.text_field :valor_total_maquina %>
+  </div>
+  <div class="field">
+    <%= f.label :valor_depreciacion %><br>
+    <%= f.text_field :valor_depreciacion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

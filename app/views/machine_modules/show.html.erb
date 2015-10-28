@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Machine:</strong>
+  <%= @machine_module.machine %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @machine_module.cantidad %>
+</p>
+
+<p>
+  <strong>Fecha compra:</strong>
+  <%= @machine_module.fecha_compra %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @machine_module.precio %>
+</p>
+
+<p>
+  <strong>Total maquina:</strong>
+  <%= @machine_module.total_maquina %>
+</p>
+
+<p>
+  <strong>Valor total maquina:</strong>
+  <%= @machine_module.valor_total_maquina %>
+</p>
+
+<p>
+  <strong>Valor depreciacion:</strong>
+  <%= @machine_module.valor_depreciacion %>
+</p>
+
+<%= link_to 'Edit', edit_machine_module_path(@machine_module) %> |
+<%= link_to 'Back', machine_modules_path %>

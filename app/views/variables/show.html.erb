@@ -48,7 +48,7 @@
           <tbody>
             <tr>
               <td><%= @variable.cantidad.to_i %></td>
-              <td><%= @variable.nombre %></td>
+              <td><%= @variable.datasheet.nombre rescue nil %></td>
               <td><%= @variable.medida %></td>
               <td><%= @variable.valor_unidad.round(0) %></td>
               <td><%= @variable.valor_total.round(0) %></td>
@@ -108,7 +108,9 @@
               <% Lote.all.each do |lote| %>
                 <td><%= lote.cantidad %></td>
                 <td><%= lote.nombre %></td>
-                <td><%= lote.unidadMedida %></td>
+                <td><%= lote.unidadmedida %></td>
+                <td><%= lote.valor_unitario %></td>
+                <td><%= lote.valor_total %></td>
               <% end %>  
             </tr>
           </tbody>

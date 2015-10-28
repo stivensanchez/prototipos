@@ -6,6 +6,11 @@
   <%= stylesheet_link_tag    'diseño', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  
+
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 </head>
 <body>
   
@@ -30,4 +35,25 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+  $(document).on('page:change', function () {
+
+		$('#datepicker').datepicker({
+
+			language: "es",
+
+			format: "yyyy/mm/dd",
+			clearBtn: true,
+			keyboardNavigation: false,
+			forceParse: false,
+			autoclose: true,
+			todayHighlight: true,
+			toggleActive: true,
+			orientation: "top right"
+
+
+			})
+	})
+  </script>
 </html>

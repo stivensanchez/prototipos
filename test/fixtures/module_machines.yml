@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  modulo_id: 
+  machine_id: 
+
+two:
+  modulo_id: 
+  machine_id: 

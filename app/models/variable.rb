@@ -3,7 +3,7 @@ class Variable < ActiveRecord::Base
     belongs_to :datasheet
     before_create :calcular
     before_update :calcular2
-    before_validation :calcular3
+    after_create :calcular3
     
    
     def calcular
@@ -21,8 +21,8 @@ class Variable < ActiveRecord::Base
     end
     
     def calcular3
-        if !Variable.exists? 
-          Lote.create(cantidad: self.cantidadLote * self.cantidad, numero: self.numero, datasheet: self.datasheet.nombre, cantidadLote: self.cantidadLote, nombre: self.datasheet.nombre, unidadMedida: self.medida)
+        if Variable.exists? 
+          Lote.create(cantidad: self.cantidadLote * self.cantidad, numero: self.numero, datasheet: self.datasheet.nombre, cantidadLote: self.cantidadLote, nombre: self.datasheet.nombre, unidadmedida: self.medida, valor_unitario: self.valor_unidad , valor_total: cantidad)
         end  
     end
 end
